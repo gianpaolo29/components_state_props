@@ -1,5 +1,6 @@
 import { View, Text, StyleSheet } from 'react-native';
 import CounterButton from '@/components/CounterButton';
+import SlotCounter from '@/components/SlotCounter';
 
 type Props = {
   count: number;
@@ -17,7 +18,7 @@ export default function CounterDisplay({ count, onAdd, onMinus, onReset }: Props
 
       <Text style={styles.cardLabel}>Child · CounterDisplay</Text>
 
-      <Text style={[styles.countDisplay, { color: countColor }]}>{count}</Text>
+      <SlotCounter count={count} color={countColor} />
 
       <View style={styles.divider} />
 
@@ -54,13 +55,6 @@ const styles = StyleSheet.create({
     fontWeight: '700',
     color: '#475569',
     letterSpacing: 2.5,
-  },
-  countDisplay: {
-    fontSize: 100,
-    fontWeight: '800',
-    letterSpacing: -5,
-    textAlign: 'center',
-    paddingVertical: 4,
   },
   divider: {
     height: 1,
